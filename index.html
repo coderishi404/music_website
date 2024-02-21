@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Ranjana's Muse</title>
+    <script>
+        // Check if a parameter indicating desktop mode is present in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const desktopMode = urlParams.get('desktop');
+
+        // If desktop mode is specified, modify the viewport meta tag
+        if (desktopMode === 'true') {
+            const viewportMeta = document.getElementById('viewport-meta');
+            if (viewportMeta) {
+                viewportMeta.setAttribute('content', 'width=1024'); // Adjust the width accordingly
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="relative bg-white overflow-hidden">
